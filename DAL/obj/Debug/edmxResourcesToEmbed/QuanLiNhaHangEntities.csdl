@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLNHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ban">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaB__17036CC0" FromRole="Ban" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="ChucVu">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TaiKhoans" Relationship="Self.FK__TaiKhoan__MaCV__398D8EEE" FromRole="ChucVu" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaNhap" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="MaLH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaNsx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="LoaiHang" Relationship="Self.FK__Hang__MaLH__403A8C7D" FromRole="Hang" ToRole="LoaiHang" />
+    <NavigationProperty Name="Nsx" Relationship="Self.FK__Hang__MaNsx__412EB0B6" FromRole="Hang" ToRole="Nsx" />
+    <NavigationProperty Name="HoaDonChiTiets" Relationship="Self.FK__HoaDonChiTi__MaH__1AD3FDA4" FromRole="Hang" ToRole="HoaDonChiTiet" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaTK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaB" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="trangThai" Type="Int32" />
+    <Property Name="thanhTien" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Ban" Relationship="Self.FK__HoaDon__MaB__17036CC0" FromRole="HoaDon" ToRole="Ban" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__HoaDon__MaTK__160F4887" FromRole="HoaDon" ToRole="TaiKhoan" />
+    <NavigationProperty Name="HoaDonChiTiets" Relationship="Self.FK__HoaDonChi__MaHoa__19DFD96B" FromRole="HoaDon" ToRole="HoaDonChiTiet" />
+  </EntityType>
+  <EntityType Name="HoaDonChiTiet">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+      <PropertyRef Name="MaH" />
+    </Key>
+    <Property Name="MaHoaDon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Hang" Relationship="Self.FK__HoaDonChiTi__MaH__1AD3FDA4" FromRole="HoaDonChiTiet" ToRole="Hang" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDonChi__MaHoa__19DFD96B" FromRole="HoaDonChiTiet" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="LoaiHang">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="Self.FK__Hang__MaLH__403A8C7D" FromRole="LoaiHang" ToRole="Hang" />
+  </EntityType>
+  <EntityType Name="Nsx">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="Self.FK__Hang__MaNsx__412EB0B6" FromRole="Nsx" ToRole="Hang" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinh" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaCV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ChucVu" Relationship="Self.FK__TaiKhoan__MaCV__398D8EEE" FromRole="TaiKhoan" ToRole="ChucVu" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaTK__160F4887" FromRole="TaiKhoan" ToRole="HoaDon" />
+  </EntityType>
+  <Association Name="FK__HoaDon__MaB__17036CC0">
+    <End Role="Ban" Type="Self.Ban" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ban">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__MaCV__398D8EEE">
+    <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChucVu">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaCV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hang__MaLH__403A8C7D">
+    <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="MaLH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hang__MaNsx__412EB0B6">
+    <End Role="Nsx" Type="Self.Nsx" Multiplicity="1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nsx">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="MaNsx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonChiTi__MaH__1AD3FDA4">
+    <End Role="Hang" Type="Self.Hang" Multiplicity="1" />
+    <End Role="HoaDonChiTiet" Type="Self.HoaDonChiTiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hang">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HoaDonChiTiet">
+        <PropertyRef Name="MaH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__MaTK__160F4887">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonChi__MaHoa__19DFD96B">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="HoaDonChiTiet" Type="Self.HoaDonChiTiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HoaDonChiTiet">
+        <PropertyRef Name="MaHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLiNhaHangEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bans" EntityType="Self.Ban" />
+    <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
+    <EntitySet Name="Hangs" EntityType="Self.Hang" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="HoaDonChiTiets" EntityType="Self.HoaDonChiTiet" />
+    <EntitySet Name="LoaiHangs" EntityType="Self.LoaiHang" />
+    <EntitySet Name="Nsxes" EntityType="Self.Nsx" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <AssociationSet Name="FK__HoaDon__MaB__17036CC0" Association="Self.FK__HoaDon__MaB__17036CC0">
+      <End Role="Ban" EntitySet="Bans" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__MaCV__398D8EEE" Association="Self.FK__TaiKhoan__MaCV__398D8EEE">
+      <End Role="ChucVu" EntitySet="ChucVus" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hang__MaLH__403A8C7D" Association="Self.FK__Hang__MaLH__403A8C7D">
+      <End Role="LoaiHang" EntitySet="LoaiHangs" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hang__MaNsx__412EB0B6" Association="Self.FK__Hang__MaNsx__412EB0B6">
+      <End Role="Nsx" EntitySet="Nsxes" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonChiTi__MaH__1AD3FDA4" Association="Self.FK__HoaDonChiTi__MaH__1AD3FDA4">
+      <End Role="Hang" EntitySet="Hangs" />
+      <End Role="HoaDonChiTiet" EntitySet="HoaDonChiTiets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__MaTK__160F4887" Association="Self.FK__HoaDon__MaTK__160F4887">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonChi__MaHoa__19DFD96B" Association="Self.FK__HoaDonChi__MaHoa__19DFD96B">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="HoaDonChiTiet" EntitySet="HoaDonChiTiets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

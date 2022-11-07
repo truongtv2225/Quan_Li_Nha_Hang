@@ -1,0 +1,6 @@
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\bin\Debug\DTO.dll
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\bin\Debug\DTO.pdb
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\obj\Debug\DTO.dll
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\DTO\obj\Debug\DTO.pdb

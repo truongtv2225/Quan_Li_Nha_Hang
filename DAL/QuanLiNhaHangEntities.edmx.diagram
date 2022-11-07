@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e2e95bde439b47c7b0ad4291791fe7d4" Name="Diagram1">
+        <EntityTypeShape EntityType="QLNHModel.Ban" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.ChucVu" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.Hang" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.HoaDon" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.HoaDonChiTiet" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.LoaiHang" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.Nsx" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHModel.TaiKhoan" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QLNHModel.FK__HoaDon__MaB__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__TaiKhoan__MaCV__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__Hang__MaLH__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__Hang__MaNsx__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__HoaDonChiTi__MaH__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__HoaDon__MaTK__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHModel.FK__HoaDonChi__MaHoa__19DFD96B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
