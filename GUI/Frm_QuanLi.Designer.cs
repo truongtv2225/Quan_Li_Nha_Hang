@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThongKe = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnQLSP = new System.Windows.Forms.Button();
             this.btnQLNV = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.labTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnThongKe = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnhDaiDien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +58,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 807);
             this.panel1.TabIndex = 0;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.Plum;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThongKe.Location = new System.Drawing.Point(3, 503);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(198, 49);
+            this.btnThongKe.TabIndex = 2;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnBanHang
             // 
@@ -156,24 +170,10 @@
             // 
             this.panel3.AutoSize = true;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(204, 57);
+            this.panel3.Location = new System.Drawing.Point(1000, 57);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1151, 750);
+            this.panel3.Size = new System.Drawing.Size(0, 750);
             this.panel3.TabIndex = 2;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Plum;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Location = new System.Drawing.Point(3, 503);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(198, 49);
-            this.btnThongKe.TabIndex = 2;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // Frm_QuanLi
             // 
@@ -187,6 +187,7 @@
             this.Name = "Frm_QuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_QuanLi";
+            this.Load += new System.EventHandler(this.Frm_QuanLi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnhDaiDien)).EndInit();

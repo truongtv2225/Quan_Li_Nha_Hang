@@ -31,3 +31,4 @@ C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\GUI\obj\Debug\GUI.Frm_QLLH.resource
 C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\GUI\obj\Debug\GUI.Frm_QLNSX.resources
 C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\GUI\obj\Debug\GUI.Frm_BanHang.resources
 C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\GUI\obj\Debug\GUI.Frm_ThongKe.resources
+C:\Users\Wonnn\OneDrive\Desktop\C# learn\GUI\GUI\obj\Debug\GUI.Frm_NhanVien.resources

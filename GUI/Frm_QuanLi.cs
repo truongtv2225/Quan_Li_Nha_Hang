@@ -89,5 +89,10 @@ namespace GUI
         {
             OpenChildForm(new Frm_ThongKe());
         }
+
+        private void Frm_QuanLi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
